@@ -228,4 +228,8 @@ img {
         right: 20px; /* 调整右边距 */
         transform: translate(0, -50%); /* 确保文本居右 */
     }
+
+    .title-container .subtitle {
+        font-size: 16px; /* 调整文字大小为当前的2/3 */
+    }
 }
