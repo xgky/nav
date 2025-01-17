@@ -155,6 +155,10 @@ img {
 }
 
 @media (max-width: 960px) {
+    img {
+        max-height: 150px; /* 将图片高度设置为当前的一半 */
+    }
+
     .container {
         width: auto; /* 让容器宽度自适应 */
         margin-top: auto; /* 让容器上边距自适应 */
