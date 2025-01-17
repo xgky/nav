@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: "Play", "MArima Madurai", Microsoft JhengHei, Georgia, Times, serif, Microsoft Yahei, Open Sans, sans-serif;
+}
+
+.image-container {
+    position: relative;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 200px; /* 限制图片的最大高度 */
+}
+
+.title-container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    color: white;
+    font-size: 36px;
+    padding-right: 20px;
+}
+
+.subtitle {
+    margin-top: -50px;
+    font-size: 24px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: -100px; /* 页面内容压住顶部图片100像素 */
+    background-color: white;
+    padding: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f8f9fa; /* 灰白色背景 */
+    padding: 1rem;
+    border-radius: 10px;
+    margin-right: 20px;
+    position: sticky;
+    top: 10px; /* 固定到页面顶部 */
+}
+
+.sidebar h2 {
+    text-align: center; /* 标题居中 */
+    color: #555; /* 灰色字体 */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #555; /* 灰色字体 */
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 16px; /* 调整分类文字大小 */
+    background-color: transparent; /* 确保背景颜色透明 */
+    font-weight: bold; /* 加粗分类文字 */
+}
+
+.sidebar ul li a:hover {
+    background-color: #00796b; /* 鼠标悬停时显示深蓝绿色 */
+    color: white; /* 鼠标悬停时文字变白色 */
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: calc(100% - 240px); /* 给左侧的侧边栏留出空间 */
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* 保证category类宽度占满父元素 */
+    margin-bottom: 2rem; /* 增加分类之间的行距 */
+}
+
+.category-title {
+    width: 100%;
+    font-size: 24px;
+    color: #555; /* 灰色字体 */
+    margin-bottom: 1rem;
+    text-align: left; /* 标题居左 */
+    display: flex;
+    align-items: center;
+}
+
+.category-title::before {
+    content: '|';
+    color: orange; /* 橙色竖线 */
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* 确保3个卡片一行，减去margin */
+    box-sizing: border-box;
+}
+
+.card p {
+    color: #555;
+    font-size: 14px; /* 调整卡片介绍文字大小 */
+    white-space: nowrap; /* 避免换行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #00796b; /* 调整链接颜色为深蓝绿色 */
+}
+
+.card a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+.mobile-menu {
+    display: none; /* 默认情况下隐藏折叠菜单 */
+}
+
+@media (max-width: 960px) {
+    .container {
+        width: auto; /* 让容器宽度自适应 */
+        margin-top: auto; /* 让容器上边距自适应 */
+        bottom: -20px; /* 把容器放在图片下方 */
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 10px; /* 保持圆角 */
+    }
+
+    .sidebar {
+        display: none; /* 隐藏侧边栏 */
+        width: 100%; /* 让侧边栏宽度自适应 */
+        margin-bottom: 20px;
+        position: static; /* 取消固定位置 */
+        border-radius: 10px; /* 保持圆角 */
+    }
+
+    .mobile-menu {
+        display: block; /* 小屏幕上显示折叠菜单 */
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .mobile-menu h2 {
+        text-align: center;
+        color: #555;
+        cursor: pointer; /* 增加点击手势 */
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        display: none; /* 默认折叠 */
+    }
+
+    .mobile-menu ul li {
+        margin: 1rem 0;
+    }
+
+    .mobile-menu ul li a {
+        text-decoration: none;
+        color: #555;
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: transparent;
+        font-weight: bold;
+    }
+
+    .mobile-menu ul li a:hover {
+        background-color: #00796b;
+        color: white;
+    }
+
+    .content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card {
+        width: calc(50% - 20px); /* 卡片在手机上一行显示两个 */
+        margin: 10px;
+    }
+
+    .title-container {
+        text-align: right;
+        right: 20px; /* 调整右边距 */
+        transform: translate(0, -50%); /* 确保文本居右 */
+    }
+}
